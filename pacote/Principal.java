@@ -26,7 +26,7 @@ public class Principal {
 		}
 		
 		if (contaVip.transacao(100, contaCorrente)) {
-			System.out.println("realizado com sucesso!");
+			System.out.println("Tranferência realizado com sucesso!");
 			System.out.println("Saldo atual do(a) " + contaVip.getNome() + ": R$" + contaVip.getSaldo());
 			System.out.println("Saldo atual do(a) " + contaCorrente.getNome() + ": R$" + contaCorrente.getSaldo());
 		}

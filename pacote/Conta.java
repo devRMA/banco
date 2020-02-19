@@ -9,20 +9,20 @@ public class Conta {
 	//Métodos
 	public boolean saque(double dinheiro){
 		if (dinheiro <= getSaldo()) {
-			saldo = (getSaldo() - dinheiro);
+			saldo -= dinheiro;
 			return true;
 		}else {
 			return false;
 		}
 	}
 	public void deposito(double quantia) {
-		saldo = (quantia - getTaxaAdministracao());
+		saldo += (quantia - getTaxaAdministracao());
 		System.out.println("R$" + getSaldo() + " adicionado à conta do(a) " + getNome() + " com sucesso!");
 	}
 	public boolean transacao(double quantia, Conta paraQuem) {
 		quantia += getTaxaTransacao();
 		if (quantia <= getSaldo()) {
-			paraQuem.saldo = (paraQuem.getSaldo() + (quantia - getTaxaTransacao()));
+			paraQuem.deposito((quantia - getTaxaTransacao()));
 			saldo -= quantia;
 			return true;
 		}else {
