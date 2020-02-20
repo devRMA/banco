@@ -7,4 +7,9 @@ public class ContaPoupanca extends Conta {
 		setTaxaAdministracao(2.50);
 	}
 	
+	public boolean transacao(double quantia, Conta paraQuem) {
+		System.out.println("Você não pode transferir!");
+		return false;
+	}
+	
 }

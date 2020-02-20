@@ -14,6 +14,7 @@ public class Principal {
 		contaVip.setNome("Thaís");
 		
 		
+		
 		contaCorrente.deposito(500);
 		contaPoupanca.deposito(500);
 		contaVip.deposito(500);

@@ -1,6 +1,9 @@
 package pacote;
 
-public class Conta {
+//A classe não deve ser instanciada
+//ela serve apenas de "molde" para as especialistas
+//o abstract é usado para isso
+public abstract class Conta {
 	//Atributos
 	private String nome;
 	private double saldo = 0.0;
@@ -22,8 +25,8 @@ public class Conta {
 	public boolean transacao(double quantia, Conta paraQuem) {
 		quantia += getTaxaTransacao();
 		if (quantia <= getSaldo()) {
-			paraQuem.deposito((quantia - getTaxaTransacao()));
-			saldo -= quantia;
+			paraQuem.deposito(quantia);
+			saldo -= (quantia + getTaxaTransacao());
 			return true;
 		}else {
 			return false;
